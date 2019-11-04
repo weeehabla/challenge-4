@@ -23,7 +23,7 @@ you can't copy and past from the internet , and you can't look at your previous 
 Solutions are submitted via [Pull Request](https://help.github.com/articles/using-pull-requests). Follow these steps:
 
 1. From **your fork**, select `Pull Requests` and then create a `New pull request`.
-2. STOP. _Before_ you `Click to create a pull request for this comparison` you must **adjust the target branch** (aka `base branch`) to be your username. Once chagned, the pull-request heading should look like this:
+2. STOP. _Before_ you `Click to create a pull request for this comparison` you must **adjust the target branch** (aka `base branch`) to be your username. Once changed, the pull-request heading should look like this:
 
 > rbk:username ... username:master
 
