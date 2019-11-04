@@ -28,36 +28,62 @@ function operateOn(firstNumber, secondNumber, operation) {
 //Write the function using while loop and for loop
 
 function addArraysWhileLoop(firstArray, secondArray) {
-  //TODO: your code here
+    var array , array2 ;
+    var sum = [];
+    if ( firstArray.length > secondArray.length){
+    array =  firstArray
+    array2 = secondArray
+  }
+  else{
+    array = secondArray;
+    array2 = firstArray;
+  }
+  var i = 0 ;
+    while( i < array.length) {
+        var j = 0 ;
+        while( j < array2.length) {
+             
+            if (i === j ) {
+               
+             sum.push(array[i]+array2[j]);
+             }
+             j++ ;
+        }
+        if (i > array2.length-1) {
+            sum.push(array[i]+1)
+       }
+       i++ ;
+    }
+    return sum ;
 }
 
 function addArraysForLoop(firstArray, secondArray) {
   var array , array2 ;
   var sum = [];
 
-
   if ( firstArray.length > secondArray.length){
     array =  firstArray
     array2 = secondArray
-
   }
   else{
     array = secondArray;
     array2 = firstArray;
   }
 
-  for (var i =0 ; i < array.length ; i++){
+  for (var i =0 ; i < array.length ; i++) {
 
-    for ( var j = 0 ; j < array2.length ; j++)
-    {
+    for ( var j = 0 ; j < array2.length ; j++) {
+    
       if (i === j ){
         sum.push(array[i]+array2[j])
 
-      }
+            }
 
       }
+       if (i > array2.length-1) {
+        sum.push(array[i]+1)
+       }
     }
-  
   return sum ;
   //TODO: you code here
 }
@@ -67,25 +93,19 @@ function addArraysForLoop(firstArray, secondArray) {
 // posSum[1,-4,7,12] => 1 + 7 + 12 = 20
 
 //TODO: you code here
-var sum = 0 
 
-function posSum(array){
-
-  if (array.length <= 0 ) {
-    
-    return sum 
-  }
-
-  if(array[0] > 0){
-
-    console.log(array[0])
-    sum += array[0]
-  }
  
-  array.shift()
+function posSum(array) {
+  if (array.length === 0 ) {
+    return 0 ;
+  }
+  if(array[0] > 0) {
+    return array[0] + posSum(array.slice(1));
+  }
+  else
+    return posSum(array.slice(1));
   
-  return sum + posSum(array)
-  
+ 
 }
 //=========================================================== 4
 //I have a bucket of sloths. Each sloth is special and has a long name.
